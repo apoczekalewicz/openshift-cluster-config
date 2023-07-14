@@ -13,6 +13,11 @@ subscriptions:
     namespace: patch-operator
     channel: alpha
     source: community-operators
+  - name: web-terminal
+    namespace: openshift-operators
+    channel: fast
+    source: redhat-operators
+
 auth:
   enabled: true
 acs:
