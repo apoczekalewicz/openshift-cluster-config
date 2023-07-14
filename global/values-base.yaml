@@ -13,9 +13,12 @@ subscriptions:
     namespace: patch-operator
     channel: alpha
     source: community-operators
+auth:
+  enabled: true
 acs:
   enabled: true
 sealedsecrets:
   enabled: false
 gitops:
   enabled: true
+
