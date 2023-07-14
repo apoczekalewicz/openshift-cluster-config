@@ -14,7 +14,7 @@ subscriptions:
     channel: alpha
     source: community-operators
 acs:
-  enabled: false
+  enabled: true
 sealedsecrets:
   enabled: false
 gitops:
