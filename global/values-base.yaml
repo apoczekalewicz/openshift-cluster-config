@@ -20,10 +20,9 @@ subscriptions:
 
 auth:
   enabled: true
-  a: true
 acs:
   enabled: true
-  pipelines: false
+  pipelines: true
 sealedsecrets:
   enabled: true
 gitops:
