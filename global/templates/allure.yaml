@@ -33,6 +33,7 @@ spec:
   ignoreDifferences:
   - group: apps
     kind: Deployment
-    jsonPointers:
-    - /spec/template/spec/containers/image
+    jqPathExpression:
+      - >-
+        .spec.template.spec.containers[] | select(.name == "allure").image
 {{- end }}
