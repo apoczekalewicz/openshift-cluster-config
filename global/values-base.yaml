@@ -26,4 +26,5 @@ sealedsecrets:
   enabled: true
 gitops:
   enabled: true
-
+allure:
+  enabled: true
