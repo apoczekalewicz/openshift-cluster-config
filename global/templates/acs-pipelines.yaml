@@ -84,7 +84,7 @@ spec:
             sleep 10
         done
 
-        CENTRAL_URL="$(oc -n rhacs-operator get route central -o go-template='{{.spec.host}}')"
+        #CENTRAL_URL="$(oc -n rhacs-operator get route central -o go-template='{{.spec.host}}')"
 
         API_ENDPOINT="/v1/apitokens/generate"
 
