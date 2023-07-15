@@ -29,115 +29,115 @@ subjects:
     name: pipeline
     namespace: rhacs-operator
 ---
-apiVersion: tekton.dev/v1beta1
-kind: Task
-metadata:
-  name: create-api-token-secret
-  namespace: rhacs-operator
-  annotations:
-    argocd.argoproj.io/sync-wave: "3"
-spec:
-  params:
-    - description: The namespace to create the stackrox secret in.
-      name: NAMESPACE
-      type: string
-  steps:
-    - env:
-        - name: PASSWORD
-          valueFrom:
-            secretKeyRef:
-              key: password
-              name: central-htpasswd
-      image: 'quay.io/apoczeka/container-toolbox:latest'
-      name: create-api-token-and-secret
-      resources: {}
-      script: >
-
-        # If secret already exists, don't regenerate.
-
-        if [[ -n `oc get secret roxsecrets -n $(params.NAMESPACE) 2>/dev/null` ]] ;
-        then
-
-            echo "Stackrox token secret already exists in $(params.NAMESPACE)."
-
-            exit 0
-
-        fi
-
-        # Wait for central to be ready
-
-        attempt_counter=0
-
-        max_attempts=20
-
-        echo "Waiting for central to be available..."
-
-        until $(curl -k --output /dev/null --silent --head --fail
-        https://central); do
-
-            if [ ${attempt_counter} -eq ${max_attempts} ];then
-              echo "Max attempts reached"
-              exit 1
-            fi
-
-            printf '.'
-            attempt_counter=$(($attempt_counter+1))
-            echo "Made attempt $attempt_counter, waiting..."
-            sleep 10
-        done
-
-        CENTRAL_URL="`oc -n rhacs-operator get route central -o
-        go-template='{{.spec.host}}'`"
-
-
-        API_ENDPOINT="/v1/apitokens/generate"
-
-        CENTRAL_URL_API="https://$CENTRAL_URL$API_ENDPOINT"
-
-        echo "$CENTRAL_URL_API"
-
-        PAYLOAD="{\"name\": \"$(params.NAMESPACE)\", \"role\": \"Continuous
-        Integration\"}"
-
-        echo "$PAYLOAD"
-
-        echo "Generate new token."
-
-        RESPONSE=$(curl -k \
-          -X POST -u "admin:$PASSWORD" \
-          -H "Content-Type: application/json" \
-          --data "$PAYLOAD" \
-          $CENTRAL_URL_API)
-
-        TOKEN=$(jq -r '.token' <<< "$RESPONSE")
-
-        # Create secret in target namespace.
-
-        oc create secret generic roxsecrets \
-          --from-literal=rox_central_endpoint=$CENTRAL_URL:443 \
-          --from-literal=rox_api_token=$TOKEN \
-          -n $(params.NAMESPACE)
----
-apiVersion: tekton.dev/v1beta1
-kind: Pipeline
-metadata:
-  name: acs-secret-create
-  namespace: stackrox
-  annotations:
-    argocd.argoproj.io/sync-wave: "3"
-    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-spec:
-  params:
-    - name: NAMESPACE
-      type: string
-      description: Namespace that needs a StackRox token secret.
-  tasks:
-    - name: create-api-token-secret
-      params:
-        - name: NAMESPACE
-          value: $(params.NAMESPACE)
-      taskRef:
-        kind: Task
-        name: create-api-token-secret
+#apiVersion: tekton.dev/v1beta1
+#kind: Task
+#metadata:
+#  name: create-api-token-secret
+#  namespace: rhacs-operator
+#  annotations:
+#    argocd.argoproj.io/sync-wave: "3"
+#spec:
+#  params:
+#    - description: The namespace to create the stackrox secret in.
+#      name: NAMESPACE
+#      type: string
+#  steps:
+#    - env:
+#        - name: PASSWORD
+#          valueFrom:
+#            secretKeyRef:
+#              key: password
+#              name: central-htpasswd
+#      image: 'quay.io/apoczeka/container-toolbox:latest'
+#      name: create-api-token-and-secret
+#      resources: {}
+#      script: >
+#
+#        # If secret already exists, don't regenerate.
+#
+#        if [[ -n `oc get secret roxsecrets -n $(params.NAMESPACE) 2>/dev/null` ]] ;
+#        then
+#
+#            echo "Stackrox token secret already exists in $(params.NAMESPACE)."
+#
+#            exit 0
+#
+#        fi
+#
+#        # Wait for central to be ready
+#
+#        attempt_counter=0
+#
+#        max_attempts=20
+#
+#        echo "Waiting for central to be available..."
+#
+#        until $(curl -k --output /dev/null --silent --head --fail
+#        https://central); do
+#
+#            if [ ${attempt_counter} -eq ${max_attempts} ];then
+#              echo "Max attempts reached"
+#              exit 1
+#            fi
+#
+#            printf '.'
+#            attempt_counter=$(($attempt_counter+1))
+#            echo "Made attempt $attempt_counter, waiting..."
+#            sleep 10
+#        done
+#
+#        CENTRAL_URL="`oc -n rhacs-operator get route central -o
+#        go-template='{{.spec.host}}'`"
+#
+#
+#        API_ENDPOINT="/v1/apitokens/generate"
+#
+#        CENTRAL_URL_API="https://$CENTRAL_URL$API_ENDPOINT"
+#
+#        echo "$CENTRAL_URL_API"
+#
+#        PAYLOAD="{\"name\": \"$(params.NAMESPACE)\", \"role\": \"Continuous
+#        Integration\"}"
+#
+#        echo "$PAYLOAD"
+#
+#        echo "Generate new token."
+#
+#        RESPONSE=$(curl -k \
+#          -X POST -u "admin:$PASSWORD" \
+#          -H "Content-Type: application/json" \
+#          --data "$PAYLOAD" \
+#          $CENTRAL_URL_API)
+#
+#        TOKEN=$(jq -r '.token' <<< "$RESPONSE")
+#
+#        # Create secret in target namespace.
+#
+#        oc create secret generic roxsecrets \
+#          --from-literal=rox_central_endpoint=$CENTRAL_URL:443 \
+#          --from-literal=rox_api_token=$TOKEN \
+#          -n $(params.NAMESPACE)
+#---
+#apiVersion: tekton.dev/v1beta1
+#kind: Pipeline
+#metadata:
+#  name: acs-secret-create
+#  namespace: stackrox
+#  annotations:
+#    argocd.argoproj.io/sync-wave: "3"
+#    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+#spec:
+#  params:
+#    - name: NAMESPACE
+#      type: string
+#      description: Namespace that needs a StackRox token secret.
+#  tasks:
+#    - name: create-api-token-secret
+#      params:
+#        - name: NAMESPACE
+#          value: $(params.NAMESPACE)
+#      taskRef:
+#        kind: Task
+#        name: create-api-token-secret
 ---
 {{- end }}
