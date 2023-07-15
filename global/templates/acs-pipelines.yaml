@@ -114,4 +114,25 @@ spec:
           --from-literal=rox_api_token=$TOKEN \
           -n $(params.NAMESPACE)
 ---
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: acs-secret-create
+  namespace: stackrox
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+spec:
+  params:
+    - name: NAMESPACE
+      type: string
+      description: Namespace that needs a StackRox token secret.
+  tasks:
+    - name: create-api-token-secret
+      params:
+        - name: NAMESPACE
+          value: $(params.NAMESPACE)
+      taskRef:
+        kind: Task
+        name: create-api-token-secret
 {{- end }}
