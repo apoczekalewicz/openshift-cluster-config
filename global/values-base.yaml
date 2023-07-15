@@ -22,7 +22,7 @@ auth:
   enabled: true
 acs:
   enabled: true
-  pipelines: false
+  pipelines: true
 sealedsecrets:
   enabled: true
 gitops:
