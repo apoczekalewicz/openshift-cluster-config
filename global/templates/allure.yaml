@@ -30,4 +30,9 @@ spec:
         argocd.argoproj.io/managed-by: openshift-gitops
     syncOptions:     
     - CreateNamespace=true 
+  ignoreDifferences:
+  - group: apps
+    kind: Deployment
+    jsonPointers:
+    - /spec/image
 {{- end }}
