@@ -34,5 +34,5 @@ spec:
   - group: apps
     kind: Deployment
     jsonPointers:
-    - /spec/template/spec/image
+    - /spec/template/spec/containers/image
 {{- end }}
