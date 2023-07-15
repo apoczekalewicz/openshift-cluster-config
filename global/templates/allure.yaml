@@ -5,7 +5,7 @@ metadata:
   name: allure
   namespace: openshift-gitops
 spec:
-  project: apps-management
+  project: default
   source:
     repoURL: https://github.com/eformat/allure.git
     path: chart
