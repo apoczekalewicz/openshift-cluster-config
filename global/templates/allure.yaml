@@ -21,6 +21,8 @@ spec:
     server: https://kubernetes.default.svc
     namespace: apps-allure
   syncPolicy:
+    automated:
+      selfHeal: true
     managedNamespaceMetadata:
       annotations:
         argocd.argoproj.io/sync: "true"
