@@ -15,7 +15,7 @@ spec:
   destinations:
   {{- range .Values.namespaces }}
   - namespace: "{{ .name }}"
-    server: "https://kubernetes.svc.local"
+    server: "https://kubernetes.default.svc"
   {{- end }}
 
   clusterResourceWhitelist:
