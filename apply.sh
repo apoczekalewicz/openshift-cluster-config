@@ -13,7 +13,7 @@ YAML="---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cluster-config-${DIR}-${VALUE}
+  name: cluster-config-${DIR}-${VALUES}
   namespace: openshift-gitops
 spec:
   destination:
