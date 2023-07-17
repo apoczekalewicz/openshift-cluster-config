@@ -2,18 +2,18 @@
 
 if [[ "$#" -ne 2 ]]
 then
-	echo "Usage: $0 <dir> <clustername>"
+	echo "Usage: $0 <dir> <value>"
 	exit 1
 fi
 
 DIR=$1
-CLUSTERNAME=$2
+VALUE=$2
 
 YAML="---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cluster-config-${DIR}
+  name: cluster-config-${DIR}-${VALUE}
   namespace: openshift-gitops
 spec:
   destination:
@@ -25,7 +25,7 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-        - values-${CLUSTERNAME}.yaml
+        - values-${VALUE}.yaml
   syncPolicy:
     automated:
       selfHeal: true
