@@ -4,6 +4,21 @@ groups:
       - admin
 
 projects:
+  - name: app1-prod
+    rbac:
+      - group: app1-owners
+        clusterrole: admin
+
+  - name: app1-test
+    rbac:
+      - group: app1-owners
+        clusterrole: admin
+
+- name: app1-dev
+    rbac:
+      - group: app1-owners
+        clusterrole: admin
+
   - name: app1-cicd
     rbac:
       - group: app1-owners
