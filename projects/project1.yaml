@@ -3,7 +3,7 @@ groups:
     users:
       - admin
 
-projects:
+namespaces:
   - name: app1-prod
     rbac:
       - group: app1-owners
