@@ -14,7 +14,7 @@ projects:
       - group: app1-owners
         clusterrole: admin
 
-- name: app1-dev
+  - name: app1-dev
     rbac:
       - group: app1-owners
         clusterrole: admin
