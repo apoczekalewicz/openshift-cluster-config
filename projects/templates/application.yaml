@@ -15,6 +15,10 @@ spec:
     path: {{ .path }}
     repoURL: {{ .repo }}
     targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 ---
   {{- end }}
 {{- end }}
