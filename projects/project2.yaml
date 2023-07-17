@@ -42,3 +42,18 @@ project:
   admin_group: app2-owners
   repos:
     - https://github.com/apoczekalewicz/openshift-applications.git
+  applications:
+    - name: app1-prod
+      namespace: app1-prod
+      repo: https://github.com/apoczekalewicz/openshift-applications.git
+      path: sample-app/prod
+    - name: app1-test
+      namespace: app1-test
+      repo: https://github.com/apoczekalewicz/openshift-applications.git
+      path: sample-app/test
+    - name: app1-dev
+      namespace: app1-dev
+      repo: https://github.com/apoczekalewicz/openshift-applications.git
+      path: sample-app/dev
+
+      

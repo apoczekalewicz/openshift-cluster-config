@@ -1,0 +1,20 @@
+{{- if and .Values.project .Values.project.applications}}
+{{- $project := .Values.project.name }}
+  {{- range .Values.project.applications }}
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .name }}
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: {{ .namespace }}
+    server: https://kubernetes.default.svc
+  project: {{ $project }}
+  source:
+    path: {{ .path }}
+    repoURL: {{ .repo }}
+    targetRevision: HEAD
+  {{- end }}
+{{- end }}
