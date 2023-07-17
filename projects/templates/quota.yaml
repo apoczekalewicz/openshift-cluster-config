@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: ResourceQuota
 metadata:
-  name: default-quota
+  name: default-quota-{{ .name }}
   namespace: {{ .name }}
 spec:
   hard:
