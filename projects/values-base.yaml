@@ -1,0 +1,35 @@
+projects:
+  - name: app1-prod
+    group: app1-owners
+    users:
+      - admin
+    managedBy: a
+  - name: app1-test
+    group: app1-owners
+    users: 
+      - admin
+  - name: app1-dev
+    group: app1-owners
+    users: 
+      - admin
+    quotas:
+      pods: '8'
+      memoryRequest: 4Gi
+      memoryLimit: 10Gi
+  - name: app1-cicd
+    group: app1-owners
+    users: 
+      - admin
+    quotas:
+      pods: '20'
+      cpuRequest: '4'
+      memoryRequest: 4Gi
+      cpuLimit: '20'
+      memoryLimit: 20Gi
+    default:
+      limits:
+        cpu: 1500m
+        memory: 2Gi
+      requests:
+        cpu: 250m
+        memory: 256Mi

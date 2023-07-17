@@ -1,0 +1,10 @@
+{{- range .Values.projects }}
+kind: Group
+apiVersion: user.openshift.io/v1
+metadata:
+  name: {{ .group }}
+users:
+  {{- range .users }}
+  - {{ . }}
+  {{- end }}
+{{- end }}

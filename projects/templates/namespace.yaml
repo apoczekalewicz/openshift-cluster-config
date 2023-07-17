@@ -1,0 +1,9 @@
+{{- range .Values.projects }}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .name }}
+  labels:
+    argocd.argoproj.io/managed-by: {{ .managedBy | default "openshift-gitops" }}
+{{- end }}
