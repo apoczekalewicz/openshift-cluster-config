@@ -15,7 +15,7 @@ spec:
   destinations:
   {{- range .Values.namespaces }}
   - namespace: "{{ .name }}"
-    server: "a"
+    server: "in-cluster"
   {{- end }}
 
   clusterResourceWhitelist:
