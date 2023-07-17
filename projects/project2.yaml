@@ -55,4 +55,3 @@ project:
       namespace: app2-dev
       repo: https://github.com/apoczekalewicz/openshift-applications.git
       path: sample-app/dev
-a
