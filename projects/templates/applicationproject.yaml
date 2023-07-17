@@ -1,0 +1,66 @@
+{{- if .Values.project }}
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: {{ .Values.project.name }}
+  namespace: openshift-gitops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: "Project {{ .Values.project.name }}"
+
+  sourceRepos:
+  {{- range .Values.project.repos }}
+  - {{ . }}
+  {{- end }} 
+
+  {{- range .Values.namespaces }}
+  destinations:
+  - namespace: "{{ .name }}"
+    server: https://kubernetes.default.svc
+  {{- end }}
+
+  clusterResourceWhitelist:
+#  - group: ''
+#    kind: Namespace
+ 
+  namespaceResourceWhitelist:
+  - group: 'apps'
+    kind: Deployment
+  - group: ''
+    kind: Service
+  - group: 'route.openshift.io'
+    kind: Route 
+  - group: ''
+    kind: ConfigMap
+  - group: ''
+    kind: PersistentVolumeClaim
+  - group: ''
+    kind: Secret
+  - group: ''
+    kind: ServiceAccount
+  - group: 'tekton.dev'
+    kind: Task
+  - group: 'tekton.dev'
+    kind: Pipeline
+  - group:  'monitoring.coreos.com'
+    kind: ServiceMonitor 
+  - group: 'networking.k8s.io'
+    kind: NetworkPolicy  
+  - group: 'bitnami.com'
+    kind: SealedSecret
+
+  orphanedResources:
+    warn: false
+
+  roles:
+  - name: admin-role
+    description: Sync privileges
+    policies:
+    - p, proj:{{ .Values.project.name }}:ci-role, applications, sync, {{ .Values.project.name }}/*, allow
+    groups:
+    - {{ .Values.project.admin_group }}
+
+
+
+{{- end }}

@@ -36,3 +36,10 @@ namespaces:
       requests:
         cpu: 250m
         memory: 256Mi  
+
+project:
+  name: project1
+  admin_group: app1-owners
+  repos:
+    - https://github.com/apoczekalewicz/openshift-applications.git
+    - https://git:hub.com/apoczekalewicz/openshift-applications2.git
