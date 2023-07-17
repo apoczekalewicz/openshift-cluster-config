@@ -51,7 +51,7 @@ project:
       namespace: app2-test
       repo: https://github.com/apoczekalewicz/openshift-applications.git
       path: sample-app/test
-    - name: app2-dev
-      namespace: app2-dev
-      repo: https://github.com/apoczekalewicz/openshift-applications.git
-      path: sample-app/dev
+#    - name: app2-dev
+#      namespace: app2-dev
+#      repo: https://github.com/apoczekalewicz/openshift-applications.git
+#      path: sample-app/dev
