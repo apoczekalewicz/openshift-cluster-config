@@ -7,7 +7,7 @@ then
 fi
 
 DIR=$1
-VALUE=$2
+VALUES=$2
 
 YAML="---
 apiVersion: argoproj.io/v1alpha1
@@ -25,7 +25,7 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-        - values-${VALUE}.yaml
+        - ${VALUES}.yaml
   syncPolicy:
     automated:
       selfHeal: true
