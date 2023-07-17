@@ -1,11 +1,23 @@
+groups:
+  - name: app1-owners
+    users:
+      - admin
+
 projects:
-  - name: app1-prod
+  - name: app1-cicd
     rbac:
       - group: app1-owners
         clusterrole: admin
-        users:
-          - admin
-      - group: app1-users
-        clusterrole: cluster-admin
-        users:
-          - admin2
+    quotas:
+      pods: '20'
+      cpuRequest: '4'
+      memoryRequest: 4Gi
+      cpuLimit: '20'
+      memoryLimit: 20Gi
+    default:
+      limits:
+        cpu: 1500m
+        memory: 2Gi
+      requests:
+        cpu: 250m
+        memory: 256Mi  
