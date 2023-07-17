@@ -14,8 +14,8 @@ spec:
   - {{ . }}
   {{- end }} 
 
-  {{- range .Values.namespaces }}
   destinations:
+  {{- range .Values.namespaces }}
   - namespace: "{{ .name }}"
     server: https://kubernetes.default.svc
   {{- end }}
