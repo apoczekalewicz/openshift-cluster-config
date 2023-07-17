@@ -57,7 +57,7 @@ spec:
   - name: admin-role
     description: Sync privileges
     policies:
-    - p, proj:{{ .Values.project.name }}:ci-role, applications, sync, {{ .Values.project.name }}/*, allow
+    - p, proj:{{ .Values.project.name }}:admin-role, applications, sync, {{ .Values.project.name }}/*, allow
     groups:
     - {{ .Values.project.admin_group }}
 
