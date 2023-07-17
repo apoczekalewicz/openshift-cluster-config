@@ -4,8 +4,6 @@ kind: AppProject
 metadata:
   name: {{ .Values.project.name }}
   namespace: openshift-gitops
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   description: "Project {{ .Values.project.name }}"
 
