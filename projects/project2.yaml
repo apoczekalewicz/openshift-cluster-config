@@ -43,16 +43,16 @@ project:
   repos:
     - https://github.com/apoczekalewicz/openshift-applications.git
   applications:
-    - name: app1-prod
-      namespace: app1-prod
+    - name: app2-prod
+      namespace: app2-prod
       repo: https://github.com/apoczekalewicz/openshift-applications.git
       path: sample-app/prod
-    - name: app1-test
-      namespace: app1-test
+    - name: app2-test
+      namespace: app2-test
       repo: https://github.com/apoczekalewicz/openshift-applications.git
       path: sample-app/test
-    - name: app1-dev
-      namespace: app1-dev
+    - name: app2-dev
+      namespace: app2-dev
       repo: https://github.com/apoczekalewicz/openshift-applications.git
       path: sample-app/dev
 
