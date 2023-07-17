@@ -47,6 +47,8 @@ spec:
     kind: NetworkPolicy  
   - group: 'bitnami.com'
     kind: SealedSecret
+  - group: "*"
+    kind: "*"
 
   orphanedResources:
     warn: false
