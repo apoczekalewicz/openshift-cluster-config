@@ -1,27 +1,27 @@
 groups:
-  - name: app1-owners
+  - name: app2-owners
     users:
       - admin
 
 namespaces:
-  - name: app1-prod
+  - name: app2-prod
     rbac:
-      - group: app1-owners
+      - group: app2-owners
         clusterrole: admin
 
-  - name: app1-test
+  - name: app2-test
     rbac:
-      - group: app1-owners
+      - group: app2-owners
         clusterrole: admin
 
-  - name: app1-dev
+  - name: app2-dev
     rbac:
-      - group: app1-owners
+      - group: app2-owners
         clusterrole: admin
 
-  - name: app1-cicd
+  - name: app2-cicd
     rbac:
-      - group: app1-owners
+      - group: app2-owners
         clusterrole: admin
     quotas:
       pods: '20'
@@ -38,8 +38,7 @@ namespaces:
         memory: 256Mi  
 
 project:
-  name: project1
-  admin_group: app1-owners
+  name: project2
+  admin_group: app2-owners
   repos:
     - https://github.com/apoczekalewicz/openshift-applications.git
-    - https://git:hub.com/apoczekalewicz/openshift-applications2.git
