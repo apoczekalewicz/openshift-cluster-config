@@ -47,4 +47,16 @@ spec:
         minReplicas: 2
         replicas: 3
     scannerComponent: Enabled
+---
+apiVersion: v1
+data:
+  acs-auth.yaml: |+
+    name: openshift
+    minimumRole: Admin
+    openshift:
+        enable: true
+kind: ConfigMap
+metadata:
+  name: declarative-configs
+  namespace: rhacs-operator
 {{- end }}
