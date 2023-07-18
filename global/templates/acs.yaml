@@ -9,6 +9,11 @@ metadata:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   central:
+    declarativeConfiguration:
+      configMaps:
+      - name: "declarative-configs"
+      secrets:
+      - name: "sensitive-declarative-configs"
     db:
       isEnabled: Default
       persistence:
