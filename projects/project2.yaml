@@ -55,3 +55,8 @@ project:
       namespace: app2-dev
       repo: https://github.com/apoczekalewicz/openshift-applications.git
       path: sample-app/dev
+    - name: app2-cicd
+      namespace: app2-cicd
+      repo: https://github.com/apoczekalewicz/openshift-applications.git
+      path: sample-app/cicd
+      recurse: true

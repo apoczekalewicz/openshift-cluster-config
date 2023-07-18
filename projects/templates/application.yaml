@@ -12,6 +12,10 @@ spec:
     server: https://kubernetes.default.svc
   project: {{ $project }}
   source:
+  {{- if .recurse }}
+    directory:
+      recurse: true
+  {{- end }}
     path: {{ .path }}
     repoURL: {{ .repo }}
     targetRevision: HEAD
