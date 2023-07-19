@@ -27,11 +27,11 @@ namespaces:
       pods: '20'
       cpuRequest: '4'
       memoryRequest: 4Gi
-      cpuLimit: '20'
+      cpuLimit: '30'
       memoryLimit: 20Gi
     default:
       limits:
-        cpu: 1500m
+        cpu: 3500m
         memory: 2Gi
       requests:
         cpu: 250m
