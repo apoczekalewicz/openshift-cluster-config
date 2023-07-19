@@ -1,4 +1,4 @@
-{{- if not .Values.project.nolimits true }}
+{{- if not.Values.project.nolimits "true"  }}
 
 {{- range .Values.namespaces }}
 ---
