@@ -23,7 +23,7 @@ namespaces:
     rbac:
       - group: app2-owners
         clusterrole: admin
-#    nolimits: true
+    nolimits: true
     quotas:
       pods: '50'
       cpuRequest: '4'
