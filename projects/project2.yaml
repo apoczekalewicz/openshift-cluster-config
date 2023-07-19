@@ -25,9 +25,9 @@ namespaces:
         clusterrole: admin
     quotas:
       pods: '20'
-      cpuRequest: '400'
+      cpuRequest: '4000m'
       memoryRequest: 4Gi
-      cpuLimit: '2000'
+      cpuLimit: '20000m'
       memoryLimit: 20Gi
     default:
       limits:
