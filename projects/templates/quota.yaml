@@ -1,3 +1,5 @@
+{{- if not .Values.project.nolimits true }}
+
 {{- range .Values.namespaces }}
 ---
 apiVersion: v1
@@ -14,3 +16,6 @@ spec:
     limits.memory: {{ (.quotas).memoryLimit | default "8Gi" }}
 ---
 {{- end}}
+
+
+{{- end }}
