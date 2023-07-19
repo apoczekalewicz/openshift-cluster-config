@@ -26,7 +26,7 @@ namespaces:
     quotas:
       pods: '20'
       cpuRequest: '4000m'
-      memoryRequest: 4Gi
+      memoryRequest: 30Gi
       cpuLimit: '20000m'
       memoryLimit: 20Gi
     default:
