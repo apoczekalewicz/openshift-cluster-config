@@ -34,7 +34,7 @@ namespaces:
         cpu: 1500m
         memory: 2Gi
       requests:
-        cpu: 250m
+        cpu: 84m
         memory: 64Mi  
 
 project:
