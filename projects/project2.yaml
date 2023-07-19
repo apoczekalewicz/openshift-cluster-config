@@ -31,10 +31,10 @@ namespaces:
       memoryLimit: 20Gi
     default:
       limits:
-        cpu: 2500m
+        cpu: 1500m
         memory: 2Gi
       requests:
-        cpu: 550m
+        cpu: 250m
         memory: 256Mi  
 
 project:
