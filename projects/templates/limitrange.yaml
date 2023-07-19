@@ -1,4 +1,6 @@
 {{- range .Values.namespaces }}
+{{ if ne .nolimits true }}
+
 ---
 apiVersion: v1
 kind: LimitRange
@@ -14,4 +16,6 @@ spec:
         memory: {{ (.default).requests.memory | default "256Mi" }}
         cpu: {{ (.default).requests.cpu | default "250m" }}
       type: Container
+{{ end }}
+
 {{- end }}
