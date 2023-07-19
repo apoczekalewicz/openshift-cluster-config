@@ -24,10 +24,10 @@ namespaces:
       - group: app2-owners
         clusterrole: admin
     quotas:
-      pods: '50'
-      cpuRequest: '4'
+      pods: '20'
+      cpuRequest: '400'
       memoryRequest: 4Gi
-      cpuLimit: '20'
+      cpuLimit: '2000'
       memoryLimit: 20Gi
     default:
       limits:
