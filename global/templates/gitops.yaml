@@ -140,4 +140,11 @@ spec:
         cpu: 250m
         memory: 1Gi
     sharding: {}
+  resourceIgnoreDifferences:
+    all:
+      jsonPointers:
+        - /data
+        - /metadata
+      managedFieldsManagers:
+        - authentication-operator
 {{- end }}

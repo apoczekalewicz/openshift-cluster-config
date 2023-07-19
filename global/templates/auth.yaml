@@ -28,6 +28,12 @@ metadata:
 data:
   htpasswd: YWRtaW46JGFwcjEkcHkyUUN4Si8kSTJBN0MwQllGVkcuTko1VHF0LmtwLwp1c2VyOiRhcHIxJHBlTHZYdVRJJFpldWtQeEFDaTRaOVVCd0VUNGg3eDEK
 ---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: v4-0-config-user-idp-1-file-data
+  namespace: openshift-authentication
+---
 apiVersion: user.openshift.io/v1
 kind: Group
 metadata:
