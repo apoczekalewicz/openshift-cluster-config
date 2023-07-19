@@ -36,7 +36,7 @@ metadata:
   name: create-api-token-secret
   namespace: rhacs-operator
   annotations:
-    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-wave: "4"
 spec:
   params:
     - description: The namespace to create the stackrox secret in.
