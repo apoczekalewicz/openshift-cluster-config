@@ -22,6 +22,8 @@ subscriptions:
     channel: release-2.8
     source: redhat-operators
     installPlanApproval: Manual
+    targetNamespaces:
+      - open-cluster-management
 
 auth:
   enabled: true
