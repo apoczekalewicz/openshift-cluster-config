@@ -29,7 +29,11 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "2"
   {{ if .targetNamespaces }}
-spec: {}
+    {{- range .targetNamespaces }}
+spec:
+  targetNamespaces:
+    - {{ . }}
+    {{- end }}
   {{ else }}
 spec: {}
   {{ end }}
