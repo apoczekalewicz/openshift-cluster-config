@@ -17,12 +17,18 @@ subscriptions:
     namespace: openshift-operators
     channel: fast
     source: redhat-operators
+  - name: advanced-cluster-management
+    namespace: open-cluster-management
+    channel: release-2.8
+    source: redhat-operators
 
 auth:
   enabled: true
 acs:
   enabled: true
   pipelines: true
+acm:
+  enabled: true
 sealedsecrets:
   enabled: true
 gitops:
