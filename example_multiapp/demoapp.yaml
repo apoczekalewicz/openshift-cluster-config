@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: demoapp
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusterDecisionResource:
+        configMapRef: acm-placement
+        labelSelector:
+          matchLabels:
+            cluster.open-cluster-management.io/placement: global
+        requeueAfterSeconds: 180
+  template:
+    metadata:
+      name: demoapp-{{name}}
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/apoczekalewicz/openshift-applications.git
+        targetRevision: master
+        path: sample-app/dev/
+      destination:
+        namespace: demoapp
+        server: "{{server}}"
+      syncPolicy:
+        automated:
+          selfHeal: false
+        syncOptions:
+          - CreateNamespace=true
