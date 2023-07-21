@@ -16,6 +16,7 @@ spec:
   installAttemptsLimit: 1
   installed: false
   platform:
+    gcp:
       credentialsSecretRef:
         name: cloud-creds
       region: {{ .Values.region }}
