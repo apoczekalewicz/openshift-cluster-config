@@ -1,0 +1,51 @@
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  name: {{ .Values.clusterName }}
+  namespace: {{ .Values.clusterName }}
+  labels:
+    cloud: {{ .Values.provider }}
+    region: {{ .Values.region }}
+    vendor: OpenShift
+    cluster.open-cluster-management.io/clusterset: {{ .Values.managedSet }}
+spec:
+  baseDomain: {{ .Values.baseDomain }}
+  clusterName: {{ .Values.clusterName }}
+  controlPlaneConfig:
+    servingCertificates: {}
+  installAttemptsLimit: 1
+  installed: false
+  platform:
+      credentialsSecretRef:
+        name: cloud-creds
+      region: {{ .Values.region }}
+  provisioning:
+    installConfigSecretRef:
+      name: install-config
+    sshPrivateKeySecretRef:
+      name: ssh-private-ssh-key
+    imageSetRef:
+      name: img{{ .Values.version }}-x86-64-appsub
+  pullSecretRef:
+    name: pull-secret
+---
+apiVersion: hive.openshift.io/v1
+kind: MachinePool
+metadata:
+  name: {{ .Values.clusterName }}-worker
+  namespace: {{ .Values.clusterName }}
+spec:
+  {{- if eq .Values.autoscaling true }}
+  autoscaling:
+    maxReplicas: {{ .Values.autoscalingTarget }}
+    minReplicas: 3
+  {{- end }}
+  {{- if eq .Values.autoscaling false }}
+  replicas: {{ .Values.workerReplicas }}
+  {{- end }}
+  clusterDeploymentRef:
+    name: {{ .Values.clusterName }}
+  name: worker
+  platform:
+    gcp:
+      type: {{ .Values.workerType }}
