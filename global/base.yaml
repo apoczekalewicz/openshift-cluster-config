@@ -32,7 +32,7 @@ acs:
   pipelines: true
 acm:
   enabled: true
-  gitops_integration: false
+  gitops_integration: true
 sealedsecrets:
   enabled: true
 gitops:
