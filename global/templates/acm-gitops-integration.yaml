@@ -1,4 +1,4 @@
-{{- if eq .Values.acm.gitops-integration true }}
+{{- if eq .Values.acm.gitops_integration true }}
 apiVersion: cluster.open-cluster-management.io/v1beta2
 kind: ManagedClusterSetBinding
 metadata:
