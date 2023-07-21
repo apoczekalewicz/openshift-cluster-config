@@ -13,7 +13,7 @@ metadata:
 spec:
   baseDomain: {{ .Values.baseDomain }}
   clusterName: {{ .Values.clusterName }}
-  installed: false
+  installed: true
   controlPlaneConfig:
     servingCertificates: {}
   installAttemptsLimit: 1
