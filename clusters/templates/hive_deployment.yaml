@@ -52,3 +52,12 @@ spec:
   platform:
     gcp:
       type: {{ .Values.workerType }}
+---
+apiVersion: internal.open-cluster-management.io/v1beta1
+kind: ManagedClusterInfo
+metadata:
+  name: {{ .Values.clusterName }}
+  namespace: {{ .Values.clusterName }}
+spec: {}
+
+
