@@ -8,10 +8,12 @@ metadata:
     region: {{ .Values.region }}
     vendor: OpenShift
     cluster.open-cluster-management.io/clusterset: {{ .Values.managedSet }}
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
 spec:
   baseDomain: {{ .Values.baseDomain }}
   clusterName: {{ .Values.clusterName }}
-  installed: true
+  installed: false
   controlPlaneConfig:
     servingCertificates: {}
   installAttemptsLimit: 1
