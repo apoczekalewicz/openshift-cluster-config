@@ -21,7 +21,7 @@ subscriptions:
     namespace: open-cluster-management
     channel: release-2.8
     source: redhat-operators
-    installPlanApproval: Manual
+    installPlanApproval: Automatic
     targetNamespaces:
       - open-cluster-management
 
