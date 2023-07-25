@@ -24,6 +24,11 @@ subscriptions:
     installPlanApproval: Automatic
     targetNamespaces:
       - open-cluster-management
+  - name: volsync-product
+    namespace: openshift-operators
+    channel: stable
+    source: redhat-operators
+
 
 auth:
   enabled: true
