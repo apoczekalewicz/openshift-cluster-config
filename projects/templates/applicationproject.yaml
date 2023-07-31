@@ -21,6 +21,8 @@ spec:
   clusterResourceWhitelist:
 #  - group: ''
 #    kind: Namespace
+  - group: 'console.openshift.io/v1'
+    kind: ConsoleLink
  
   namespaceResourceWhitelist:
   - group: 'apps'
