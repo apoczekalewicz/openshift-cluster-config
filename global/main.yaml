@@ -28,10 +28,10 @@ subscriptions:
     namespace: openshift-operators
     channel: stable
     source: redhat-operators
-  - name: minio-operator
-    namespace: openshift-operators
-    channel: stable
-    source: certified-operators
+#  - name: minio-operator
+#    namespace: openshift-operators
+#    channel: stable
+#    source: certified-operators
 
 auth:
   enabled: true
