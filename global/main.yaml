@@ -31,7 +31,7 @@ subscriptions:
   - name: minio-operator
     namespace: openshift-operators
     channel: stable
-    source: openshift-marketplace
+    source: certified-operators
 
 auth:
   enabled: true
