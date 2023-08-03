@@ -32,6 +32,10 @@ subscriptions:
     namespace: openshift-operators
     channel: stable
     source: certified-operators
+  - name: redhat-oadp-operator
+    namespace: openshift-adp
+    channel: stable
+
 
 auth:
   enabled: true
