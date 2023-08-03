@@ -11,7 +11,7 @@ spec:
   installPlanApproval: {{ .installPlanApproval | default "Automatic" }}
   name: {{ .name }}
   source: {{ .source }}
-  sourceNamespace: openshift-marketplace
+  sourceNamespace: {{ .sourceNamespace | default "openshift-marketplace" }}
 ---
 {{- if ne .namespace "openshift-operators" }}
 apiVersion: v1
