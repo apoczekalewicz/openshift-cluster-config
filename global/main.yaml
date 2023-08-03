@@ -36,6 +36,8 @@ subscriptions:
     namespace: openshift-adp
     channel: stable
     source: redhat-operators
+    targetNamespaces:
+      - openshift-adp
 
 auth:
   enabled: true
