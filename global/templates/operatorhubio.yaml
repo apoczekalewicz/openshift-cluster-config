@@ -10,5 +10,8 @@ spec:
   image: quay.io/operator-framework/upstream-community-operators:latest
   displayName: OperatorHub.io
   publisher: OperatorHub.io
+  updateStrategy:
+    registryPoll:
+      interval: 10m
 
 {{- end }}
