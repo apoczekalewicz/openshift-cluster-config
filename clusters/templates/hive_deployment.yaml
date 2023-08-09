@@ -49,8 +49,18 @@ spec:
     name: {{ .Values.clusterName }}
   name: worker
   platform:
+    {{- if eq .Values.provider "Amazon" }}
+    aws:
+      rootVolume:
+        iops: 2000
+        size: 100
+        type: io1
+      type: {{ .Values.workerType }}
+    {{- end }}
+    {{- if eq .Values.provider "Google" }}
     gcp:
       type: {{ .Values.workerType }}
+    {{- end }}
 ---
 apiVersion: internal.open-cluster-management.io/v1beta1
 kind: ManagedClusterInfo
