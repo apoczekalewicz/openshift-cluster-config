@@ -26,8 +26,9 @@ spec:
       name: install-config
     sshPrivateKeySecretRef:
       name: ssh-private-ssh-key
-    imageSetRef:
-      name: img{{ .Values.version }}-x86-64-appsub
+#    imageSetRef:
+#      name: img{{ .Values.version }}-x86-64-appsub
+    releaseImage: {{ .Values.releaseimage }}
   pullSecretRef:
     name: pull-secret
 ---
