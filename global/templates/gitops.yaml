@@ -1,5 +1,4 @@
-{{ if hasKey .Values "gitops.enabled"  -}}
-{{- if eq .Values.gitops.enabled true }}
+{{- if and (hasKey .Values "gitops") (hasKey .Values.gitops "enabled") (eq .Values.gitops.enabled true) }}
 apiVersion: argoproj.io/v1alpha1
 kind: ArgoCD
 metadata:
@@ -148,5 +147,4 @@ spec:
         - /metadata
       managedFieldsManagers:
         - authentication-operator
-{{- end }}
 {{- end }}

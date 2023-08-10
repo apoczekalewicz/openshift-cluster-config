@@ -1,5 +1,4 @@
-{{ if hasKey .Values "acm.gitops_integration"  -}}
-{{- if eq .Values.acm.gitops_integration true }}
+{{- if and (hasKey .Values "acm") (hasKey .Values.acm "gitops_integration") (eq .Values.acm.gitops_integration true) }}
 apiVersion: cluster.open-cluster-management.io/v1beta2
 kind: ManagedClusterSetBinding
 metadata:
@@ -46,5 +45,4 @@ spec:
     kind: Placement
     name: global
     namespace: openshift-gitops
-{{- end }}
 {{- end }}

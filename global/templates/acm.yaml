@@ -1,5 +1,4 @@
-{{ if hasKey .Values "acs.enabled"  -}}
-{{- if eq .Values.acs.enabled true }}
+{{- if and (hasKey .Values "acm") (hasKey .Values.acm "enabled") (eq .Values.acm.enabled true) }}
 ---
 apiVersion: operator.open-cluster-management.io/v1
 kind: MultiClusterHub
@@ -28,5 +27,4 @@ subjects:
   - apiGroup: rbac.authorization.k8s.io
     kind: User
     name: admin
-{{- end }}
 {{- end }}

@@ -1,5 +1,5 @@
-{{ if hasKey .Values "allure.enabled"  -}}
-{{- if eq .Values.allure.enabled true }}
+{{- if and (hasKey .Values "allure") (hasKey .Values.allure "enabled") (eq .Values.allure.enabled true) }}
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -36,5 +36,4 @@ spec:
     kind: Deployment
     jsonPointers:
       - /spec/template/spec/containers/0/image
-{{- end }}
 {{- end }}
