@@ -17,3 +17,5 @@ auth:
   enabled: true
 sealedsecrets:
   enabled: true
+operatorhubio:
+  enabled: false
