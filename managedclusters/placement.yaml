@@ -1,0 +1,17 @@
+kind: Placement
+metadata:
+  name: managed
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "3"
+spec:
+  predicates:
+    - requiredClusterSelector:
+        labelSelector:
+          matchExpressions:
+            - key: managed
+              operator: In
+              values:
+                - "true"
+
