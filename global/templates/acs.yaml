@@ -1,3 +1,4 @@
+{{ if hasKey .Values "acs.eanbled"  -}}
 {{- if eq .Values.acs.enabled true }}
 apiVersion: platform.stackrox.io/v1alpha1
 kind: Central
@@ -59,4 +60,5 @@ kind: ConfigMap
 metadata:
   name: declarative-configs
   namespace: rhacs-operator
+{{- end }}
 {{- end }}
