@@ -1,3 +1,4 @@
+{{ if hasKey .Values "subscriptions"  -}}
 {{- range .Values.subscriptions }}
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
@@ -38,5 +39,6 @@ spec:
 spec: {}
   {{ end }}
 ---
+{{- end }}
 {{- end }}
 {{- end }}

@@ -1,3 +1,4 @@
+{{ if hasKey .Values "auth.enabled"  -}}
 {{- if eq .Values.auth.enabled true }}
 apiVersion: config.openshift.io/v1
 kind: OAuth
@@ -54,4 +55,5 @@ subjects:
   kind: Group
   name: cluster-admins
 ---
+{{- end }}
 {{- end }}

@@ -24,10 +24,4 @@ acm:
   gitops_integration: false
 sealedsecrets:
   enabled: true
-gitops:
-  enabled: false
-allure:
-  enabled: false
-operatorhubio:
-  enabled: false
 

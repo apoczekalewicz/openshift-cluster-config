@@ -1,3 +1,4 @@
+{{ if hasKey .Values "acs.enabled"  -}}
 {{- if eq .Values.acs.enabled true }}
 ---
 apiVersion: operator.open-cluster-management.io/v1
@@ -27,4 +28,5 @@ subjects:
   - apiGroup: rbac.authorization.k8s.io
     kind: User
     name: admin
+{{- end }}
 {{- end }}

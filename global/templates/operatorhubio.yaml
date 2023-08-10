@@ -1,3 +1,4 @@
+{{ if hasKey .Values "operatorhubio.enabled"  -}}
 {{- if eq .Values.operatorhubio.enabled true }}
 
 apiVersion: operators.coreos.com/v1alpha1
@@ -16,4 +17,5 @@ spec:
     registryPoll:
       interval: 10m
 
+{{- end }}
 {{- end }}
