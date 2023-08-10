@@ -13,9 +13,21 @@ subscriptions:
     namespace: openshift-operators
     channel: stable
     source: redhat-operators
+
 auth:
   enabled: true
+acs:
+  enabled: false
+  pipelines: false
+acm:
+  enabled: false
+  gitops_integration: false
 sealedsecrets:
   enabled: true
+gitops:
+  enabled: false
+allure:
+  enabled: false
 operatorhubio:
   enabled: false
+
