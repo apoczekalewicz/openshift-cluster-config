@@ -64,5 +64,5 @@ gitops:
   enabled: true
 allure:
   enabled: true
-#operatorhubio:
-#  enabled: true
+operatorhubio:
+  enabled: true
