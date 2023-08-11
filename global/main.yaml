@@ -44,6 +44,11 @@ subscriptions:
     channel: stable-4.13
     targetNamespaces:
       - openshift-storage
+  - name: odf-multicluster-orchestrator
+    namespace: openshift-operators
+    source: redhat-operators
+    channel: stable-4.13
+
 
 auth:
   enabled: true
