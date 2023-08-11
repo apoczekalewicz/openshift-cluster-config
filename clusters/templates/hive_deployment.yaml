@@ -17,7 +17,12 @@ spec:
     servingCertificates: {}
   installAttemptsLimit: 1
   platform:
+  {{- if eq .Values.provider "Google" }}
     gcp:
+  {{- end }}
+  {{- if eq .Values.provider "Amazon" }}
+    aws:
+  {{- end }}
       credentialsSecretRef:
         name: cloud-creds
       region: {{ .Values.region }}
