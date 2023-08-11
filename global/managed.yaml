@@ -14,5 +14,5 @@ subscriptions:
     channel: stable
     source: redhat-operators
 
-auth:
-  enabled: true
+#auth:
+#  enabled: true
