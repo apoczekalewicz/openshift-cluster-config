@@ -19,6 +19,12 @@ subscriptions:
     channel: stable-4.13
     targetNamespaces:
       - openshift-storage
+  - name: mtc-operator
+    source: redhat-operators
+    namespace: openshift-migration
+    channel: release-v1.7
+    targetNamespaces:
+      - openshift-migration
 
 auth:
   enabled: true
