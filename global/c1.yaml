@@ -28,12 +28,12 @@ subscriptions:
     namespace: openshift-operators
     channel: stable
     source: redhat-operators
-#  - name: redhat-oadp-operator
-#    namespace: openshift-adp
-#    channel: stable
-#    source: redhat-operators
-#    targetNamespaces:
-#      - openshift-adp
+  - name: redhat-oadp-operator
+    namespace: openshift-adp
+    channel: stable
+    source: redhat-operators
+    targetNamespaces:
+      - openshift-adp
   - name: odf-operator
     namespace: openshift-storage
     source: redhat-operators
