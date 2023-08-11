@@ -1,5 +1,5 @@
-channel: fast-4.13
-version: 4.13.8
+#channel: fast-4.13
+#version: 4.13.8
 subscriptions:
   - name: patch-operator
     namespace: patch-operator
@@ -20,5 +20,5 @@ subscriptions:
     targetNamespaces:
       - openshift-storage
 
-#auth:
-#  enabled: true
+auth:
+  enabled: true
