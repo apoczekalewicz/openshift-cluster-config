@@ -47,7 +47,7 @@ subscriptions:
   - name: minio-operator-rhmp
     namespace: openshift-operators
     channel: stable
-    source: certified-operators
+    source: openshift-marketplace
 
 
 auth:
