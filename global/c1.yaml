@@ -48,6 +48,10 @@ subscriptions:
     namespace: openshift-operators
     channel: stable
     source: redhat-marketplace
+  - name: mtc-operator
+    source: redhat-marketplace
+    namespace: openshift-migration
+    channel: release-v1.7
 
 
 auth:
