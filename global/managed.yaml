@@ -13,6 +13,12 @@ subscriptions:
     namespace: openshift-operators
     channel: stable
     source: redhat-operators
+  - name: odf-operator
+    namespace: openshift-storage
+    source: redhat-operators
+    channel: stable-4.13
+    targetNamespaces:
+      - openshift-storage
 
 #auth:
 #  enabled: true
