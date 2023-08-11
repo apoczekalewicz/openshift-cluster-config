@@ -42,6 +42,8 @@ subscriptions:
     namespace: openshift-storage
     source: redhat-operators
     channel: stable-4.13
+    targetNamespaces:
+      - openshift-storage
 
 auth:
   enabled: true
