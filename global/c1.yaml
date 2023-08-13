@@ -44,7 +44,7 @@ subscriptions:
     namespace: openshift-operators
     source: redhat-operators
     channel: stable-4.13
-  - name: minio-operator-rhmp
+  - name: minio-operator
     namespace: openshift-operators
     channel: stable
     source: redhat-marketplace
