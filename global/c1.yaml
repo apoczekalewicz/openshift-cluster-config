@@ -58,9 +58,9 @@ subscriptions:
 
 auth:
   enabled: true
-#acs:
-#  enabled: true
-#  pipelines: true
+acs:
+  enabled: true
+  pipelines: true
 acm:
   enabled: true
   gitops_integration: true
@@ -68,7 +68,7 @@ sealedsecrets:
   enabled: true
 gitops:
   enabled: true
-#allure:
-#  enabled: true
+allure:
+  enabled: true
 #operatorhubio:
 #  enabled: true
