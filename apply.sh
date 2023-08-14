@@ -26,9 +26,9 @@ spec:
     helm:
       valueFiles:
         - ${VALUES}.yaml
-  syncPolicy:
-    automated:
-      selfHeal: true
+#  syncPolicy:
+#    automated:
+#      selfHeal: true
 "
 
 echo "$YAML" | oc create -f -
