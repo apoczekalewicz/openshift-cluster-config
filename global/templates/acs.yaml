@@ -59,4 +59,18 @@ kind: ConfigMap
 metadata:
   name: declarative-configs
   namespace: rhacs-operator
+---
+kind: SecuredCluster
+apiVersion: platform.stackrox.io/v1alpha1
+metadata:
+  name: stackrox-secured-cluster-services
+  namespace: stackrox
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
+spec:
+  clusterName: local-cluster
+  perNode:
+    collector:
+      collection: KernelModule
 {{- end }}
