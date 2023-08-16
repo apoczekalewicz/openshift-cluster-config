@@ -25,7 +25,3 @@ spec:
             - managed.yaml
       destination:
         server: "{{server}}"
-      syncPolicy:
-        automated:
-          selfHeal: true
-
