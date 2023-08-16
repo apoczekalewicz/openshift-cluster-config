@@ -1,14 +1,14 @@
 #channel: fast-4.13
 #version: 4.13.8
 subscriptions:
-  - name: patch-operator
-    namespace: patch-operator
-    channel: alpha
-    source: community-operators
-  - name: web-terminal
-    namespace: openshift-operators
-    channel: fast
-    source: redhat-operators
+#  - name: patch-operator
+#    namespace: patch-operator
+#    channel: alpha
+#    source: community-operators
+#  - name: web-terminal
+#    namespace: openshift-operators
+#    channel: fast
+#    source: redhat-operators
   - name: volsync-product
     namespace: openshift-operators
     channel: stable
