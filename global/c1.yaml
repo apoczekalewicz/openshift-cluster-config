@@ -1,10 +1,10 @@
 #channel: stable-4.12
 #version: 4.12.24
 subscriptions:
-  - name: rhacs-operator
-    namespace: rhacs-operator
-    channel: stable
-    source: redhat-operators
+#  - name: rhacs-operator
+#    namespace: rhacs-operator
+#    channel: stable
+#    source: redhat-operators
   - name: openshift-pipelines-operator-rh
     namespace: openshift-operators
     channel: latest
@@ -48,19 +48,19 @@ subscriptions:
     namespace: openshift-operators
     channel: stable
     source: redhat-marketplace
-  - name: mtc-operator
-    source: redhat-operators
-    namespace: openshift-migration
-    channel: release-v1.7
-    targetNamespaces:
-      - openshift-migration
+#  - name: mtc-operator
+#    source: redhat-operators
+#    namespace: openshift-migration
+#    channel: release-v1.7
+#    targetNamespaces:
+#      - openshift-migration
 
 
 auth:
   enabled: true
-acs:
-  enabled: true
-  pipelines: true
+#acs:
+#  enabled: true
+#  pipelines: true
 acm:
   enabled: true
   gitops_integration: true
@@ -68,7 +68,7 @@ sealedsecrets:
   enabled: true
 gitops:
   enabled: true
-allure:
-  enabled: true
+#allure:
+#  enabled: true
 #operatorhubio:
 #  enabled: true
