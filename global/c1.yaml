@@ -13,10 +13,10 @@ subscriptions:
 #    namespace: patch-operator
 #    channel: alpha
 #    source: community-operators
-#  - name: web-terminal
-#    namespace: openshift-operators
-#    channel: fast
-#    source: redhat-operators
+  - name: web-terminal
+    namespace: openshift-operators
+    channel: fast
+    source: redhat-operators
   - name: advanced-cluster-management
     namespace: open-cluster-management
     channel: release-2.8
