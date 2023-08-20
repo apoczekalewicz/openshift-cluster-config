@@ -8,10 +8,4 @@ sleep 5
 echo "Add cluster-admin to the openshift-gitops-argocd-application-controller"
 oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller -n openshift-gitops
 
-sleep 5
-
-echo ArgoCD route:
-oc get -n openshift-gitops route
-echo Admin password:
-oc get -n openshift-gitops secret openshift-gitops-cluster -o json | jq -r '.data | .[]' | base64 -d ; echo ""
 
