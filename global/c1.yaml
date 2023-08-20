@@ -1,22 +1,22 @@
 #channel: stable-4.12
 #version: 4.12.24
 subscriptions:
-  - name: rhacs-operator
-    namespace: rhacs-operator
-    channel: stable
-    source: redhat-operators
-  - name: openshift-pipelines-operator-rh
-    namespace: openshift-operators
-    channel: latest
-    source: redhat-operators
+#  - name: rhacs-operator
+#    namespace: rhacs-operator
+#    channel: stable
+#    source: redhat-operators
+#  - name: openshift-pipelines-operator-rh
+#    namespace: openshift-operators
+#    channel: latest
+#    source: redhat-operators
 #  - name: patch-operator
 #    namespace: patch-operator
 #    channel: alpha
 #    source: community-operators
-  - name: web-terminal
-    namespace: openshift-operators
-    channel: fast
-    source: redhat-operators
+#  - name: web-terminal
+#    namespace: openshift-operators
+#    channel: fast
+#    source: redhat-operators
   - name: advanced-cluster-management
     namespace: open-cluster-management
     channel: release-2.8
@@ -28,12 +28,12 @@ subscriptions:
     namespace: openshift-operators
     channel: stable
     source: redhat-operators
-  - name: redhat-oadp-operator
-    namespace: openshift-adp
-    channel: stable
-    source: redhat-operators
-    targetNamespaces:
-      - openshift-adp
+#  - name: redhat-oadp-operator
+#    namespace: openshift-adp
+#    channel: stable
+#    source: redhat-operators
+#    targetNamespaces:
+#      - openshift-adp
   - name: odf-operator
     namespace: openshift-storage
     source: redhat-operators
@@ -58,9 +58,9 @@ subscriptions:
 
 auth:
   enabled: true
-acs:
-  enabled: true
-  pipelines: true
+#acs:
+#  enabled: true
+#  pipelines: true
 acm:
   enabled: true
   gitops_integration: true
@@ -68,7 +68,7 @@ sealedsecrets:
   enabled: true
 gitops:
   enabled: true
-allure:
-  enabled: true
+#allure:
+#  enabled: true
 #operatorhubio:
 #  enabled: true
