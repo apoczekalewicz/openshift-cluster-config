@@ -1,5 +1,5 @@
 clusterName: cluster2
-baseDomain: sandbox2697.opentlc.com
+baseDomain: sandbox2206.opentlc.com
 region: us-east-2
 provider: Amazon
 workerType: m5.xlarge
