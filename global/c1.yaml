@@ -17,13 +17,13 @@ subscriptions:
 #    namespace: openshift-operators
 #    channel: fast
 #    source: redhat-operators
-  - name: advanced-cluster-management
-    namespace: open-cluster-management
-    channel: release-2.8
-    source: redhat-operators
-    installPlanApproval: Automatic
-    targetNamespaces:
-      - open-cluster-management
+#  - name: advanced-cluster-management
+#    namespace: open-cluster-management
+#    channel: release-2.8
+#    source: redhat-operators
+#    installPlanApproval: Automatic
+#    targetNamespaces:
+#      - open-cluster-management
 #  - name: volsync-product
 #    namespace: openshift-operators
 #    channel: stable
@@ -62,8 +62,8 @@ acs:
   enabled: true
   pipelines: true
 acm:
-  enabled: true
-  gitops_integration: true
+  enabled: false
+  gitops_integration: false
 sealedsecrets:
   enabled: true
 gitops:
