@@ -69,6 +69,6 @@ sealedsecrets:
 gitops:
   enabled: true
 allure:
-  enabled: true
+  enabled: false
 #operatorhubio:
 #  enabled: true
