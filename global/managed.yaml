@@ -9,22 +9,22 @@ subscriptions:
     namespace: openshift-operators
     channel: fast
     source: redhat-operators
-  - name: volsync-product
-    namespace: openshift-operators
-    channel: stable
-    source: redhat-operators
-  - name: odf-operator
-    namespace: openshift-storage
-    source: redhat-operators
-    channel: stable-4.13
-    targetNamespaces:
-      - openshift-storage
-  - name: mtc-operator
-    source: redhat-operators
-    namespace: openshift-migration
-    channel: release-v1.7
-    targetNamespaces:
-      - openshift-migration
+#  - name: volsync-product
+#    namespace: openshift-operators
+#    channel: stable
+#    source: redhat-operators
+#  - name: odf-operator
+#    namespace: openshift-storage
+#    source: redhat-operators
+#    channel: stable-4.13
+#    targetNamespaces:
+#      - openshift-storage
+#  - name: mtc-operator
+#    source: redhat-operators
+#    namespace: openshift-migration
+#    channel: release-v1.7
+#    targetNamespaces:
+#      - openshift-migration
 
 auth:
   enabled: true
