@@ -1,6 +1,6 @@
 clusterName: gcp3
 baseDomain: poczo.net
-region: europe-west9
+region: europe-west2
 project: nomadic-vehicle-107012
 provider: Google
 workerType: n1-standard-4
