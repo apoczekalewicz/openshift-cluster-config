@@ -10,6 +10,8 @@ subscriptions:
 
 auth:
   enabled: true
+mce:
+  enabled: true
 acs:
   enabled: false
   pipelines: false
@@ -22,6 +24,5 @@ gitops:
   enabled: true
 allure:
   enabled: false
-mce: true
 #operatorhubio:
 #  enabled: true

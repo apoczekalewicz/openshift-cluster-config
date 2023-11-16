@@ -1,4 +1,4 @@
-{{- if and (hasKey .Values "mce") (hasKey .Values.mce "true") }}
+{{- if and (hasKey .Values "mce") (hasKey .Values.mce "enabled") (eq .Values.mce.enabled true) }}
 
 apiVersion: multicluster.openshift.io/v1
 kind: MultiClusterEngine
