@@ -37,13 +37,13 @@ subscriptions:
   - name: odf-operator
     namespace: openshift-storage
     source: redhat-operators
-    channel: stable-4.13
+    channel: stable-4.14
     targetNamespaces:
       - openshift-storage
   - name: odf-multicluster-orchestrator
     namespace: openshift-operators
     source: redhat-operators
-    channel: stable-4.13
+    channel: stable-4.14
   - name: minio-operator-rhmp
     namespace: openshift-operators
     channel: stable
@@ -51,7 +51,7 @@ subscriptions:
   - name: mtc-operator
     source: redhat-operators
     namespace: openshift-migration
-    channel: release-v1.7
+    channel: release-v1.8
     targetNamespaces:
       - openshift-migration
 
