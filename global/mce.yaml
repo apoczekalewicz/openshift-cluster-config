@@ -3,7 +3,7 @@
 subscriptions:
   - name: multicluster-engine
     namespace: openshift-operators
-    channel: stable-2.1
+    channel: stable-2.4
     source: redhat-operators
 
 auth:
