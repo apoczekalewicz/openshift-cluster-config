@@ -44,10 +44,10 @@ subscriptions:
     namespace: openshift-operators
     source: redhat-operators
     channel: stable-4.14
-#  - name: minio-operator-rhmp
-#    namespace: openshift-operators
-#    channel: stable
-#    source: redhat-marketplace
+  - name: minio-operator
+    namespace: openshift-operators
+    channel: stable
+    source: operatorhubio-catalog
   - name: mtc-operator
     source: redhat-operators
     namespace: openshift-migration
