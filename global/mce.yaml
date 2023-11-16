@@ -5,6 +5,8 @@ subscriptions:
     namespace: openshift-operators
     channel: stable-2.4
     source: redhat-operators
+    targetNamespaces:
+      - multicluster-engine
 
 auth:
   enabled: true
@@ -20,5 +22,6 @@ gitops:
   enabled: true
 allure:
   enabled: false
+mce: true
 #operatorhubio:
 #  enabled: true
