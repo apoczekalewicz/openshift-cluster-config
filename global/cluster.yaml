@@ -1,31 +1,16 @@
 #channel: stable-4.14
 #version: 4.14.1
 subscriptions:
-  - name: rhacs-operator
-    namespace: rhacs-operator
-    channel: stable
-    source: redhat-operators
-  - name: openshift-pipelines-operator-rh
+  - name: multicluster-engine
     namespace: openshift-operators
-    channel: latest
+    channel: stable-2.1
     source: redhat-operators
-  - name: web-terminal
-    namespace: openshift-operators
-    channel: fast
-    source: redhat-operators
-  - name: odf-operator
-    namespace: openshift-storage
-    source: redhat-operators
-    channel: stable-4.14
-    targetNamespaces:
-      - openshift-storage
-
 
 auth:
   enabled: true
 acs:
-  enabled: true
-  pipelines: true
+  enabled: false
+  pipelines: false
 acm:
   enabled: false
   gitops_integration: false
