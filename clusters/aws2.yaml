@@ -1,6 +1,6 @@
 clusterName: cluster2
 baseDomain: sandbox3089.opentlc.com
-region: eu-west-1
+region: us-east-2
 provider: Amazon
 workerType: m5.xlarge
 workerReplicas: 3
