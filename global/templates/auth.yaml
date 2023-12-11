@@ -33,6 +33,9 @@ kind: Secret
 metadata:
   name: v4-0-config-user-idp-1-file-data
   namespace: openshift-authentication
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
 ---
 apiVersion: user.openshift.io/v1
 kind: Group
