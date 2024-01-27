@@ -7,6 +7,10 @@ subscriptions:
     source: redhat-operators
     targetNamespaces:
       - multicluster-engine
+  - name: web-terminal
+    namespace: openshift-operators
+    channel: fast
+    source: redhat-operators
 
 auth:
   enabled: true
